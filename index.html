@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agnik's Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="/css/image/aginkpic.jpg" alt="Profile Photo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+        Agnik's Portfolio
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link rounded-link" href="#about"><i class="bi bi-person-circle"></i> About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-link" href="#work"><i class="bi bi-briefcase"></i> Work Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-link" href="#contact"><i class="bi bi-envelope"></i> Contact</a>
+            </li>
+            <li class="nav-item">
+                <!-- Resume Download Button -->
+                <a class="btn btn-primary ml-3" href="/path-to-your-resume.pdf" download="Agnik_Resume.pdf">
+                    <i class="bi bi-download"></i> Resume
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- CSS -->
+<style>
+    .rounded-link {
+        border-radius: 50px; /* Makes the shape round */
+        padding: 10px 20px; /* Adjust the padding for a pill-like appearance */
+        border: 1px solid #ccc; /* Optional: add a border */
+        background-color: #f8f9fa; /* Optional: change background color */
+        transition: background-color 0.3s ease; /* Optional: smooth transition */
+    }
+
+    .rounded-link:hover {
+        background-color: #e2e6ea; /* Optional: change color on hover */
+    }
+</style>
+
+
+<!-- Hero Section -->
+<section id="hero" class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-4 animate-text">
+            <!-- Wrapping each letter in a span for animation -->
+            <span>H</span><span>e</span><span>y</span>, 
+            <span>V</span><span>i</span><span>s</span><span>i</span><span>t</span><span>o</span><span>r</span>! 
+            <span>I</span><span>'</span><span>m</span> 
+            <span>A</span><span>g</span><span>n</span><span>i</span><span>k</span>
+        </h1>
+        <p class="lead"><strong>I am a passionate Software Engineer currently pursuing a B.Tech degree from the Institute of Engineering and Management, Kolkata. My expertise spans across Python, Flask, AI, Generative AI, Kotlin, SQL, and more. With a solid foundation in software development and a keen interest in AI technologies, I focus on building innovative solutions that bridge the gap between cutting-edge tech and practical applications. I completed my higher secondary education at Khukuradaha ICMM High School, and I am constantly seeking opportunities to expand my knowledge and skills in the ever-evolving tech landscape.If you want to see my projects then click the below botton.</strong></p>
+        <a href="#work" class="btn btn-transparent btn-ellipse"><i class="bi bi-arrow-down-circle"></i> View My Work</a>
+    </div>
+</section>
+
+<style>
+    /* Styling for the Hero Section */
+    #hero {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+    }
+    .animate-text {
+        color: navy; /* Text color set to navy blue */
+        font-weight: bold;
+        font-size: 3rem;
+        overflow: hidden;
+        display: inline-block;
+        white-space: nowrap;
+    }
+    /* Letter-by-letter animation */
+    .animate-text span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeInUp 0.5s ease forwards;
+    }
+    /* Keyframes for the animation */
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /* Delay for each letter */
+    .animate-text span:nth-child(1) { animation-delay: 0s; }
+    .animate-text span:nth-child(2) { animation-delay: 0.1s; }
+    .animate-text span:nth-child(3) { animation-delay: 0.2s; }
+    .animate-text span:nth-child(4) { animation-delay: 0.3s; }
+    .animate-text span:nth-child(5) { animation-delay: 0.4s; }
+    .animate-text span:nth-child(6) { animation-delay: 0.5s; }
+    .animate-text span:nth-child(7) { animation-delay: 0.6s; }
+    .animate-text span:nth-child(8) { animation-delay: 0.7s; }
+    .animate-text span:nth-child(9) { animation-delay: 0.8s; }
+    .animate-text span:nth-child(10) { animation-delay: 0.9s; }
+    .animate-text span:nth-child(11) { animation-delay: 1s; }
+    .animate-text span:nth-child(12) { animation-delay: 1.1s; }
+    .animate-text span:nth-child(13) { animation-delay: 1.2s; }
+    .animate-text span:nth-child(14) { animation-delay: 1.3s; }
+    .animate-text span:nth-child(15) { animation-delay: 1.4s; }
+    .animate-text span:nth-child(16) { animation-delay: 1.5s; }
+
+    /* Styles for the transparent button */
+    .btn-transparent {
+        background-color: transparent; /* Make button background transparent */
+        border: 2px solid navy; /* Navy border */
+        color: rgb(30, 30, 170); /* Text color */
+        padding: 10px 20px; /* Padding */
+        border-radius: 50px; /* Rounded corners for elliptical shape */
+        transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+    }
+    .btn-transparent:hover {
+        background-color: navy; /* Background color on hover */
+        color: white; /* Text color on hover */
+    }
+</style>
+
+
+
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container">
+      <h2 class="text-center mb-4">About Me</h2>
+      <div class="row justify-content-center">
+          <div class="col-md-6 text-center">
+              <img src="Agnik_profile.jpg" alt="Agnik's Profile Photo" class="profile-photo">
+          </div>
+          <div class="col-md-6">
+              <p class="about-text">Hello! I’m a passionate Software Engineer with expertise in Flask, AI, and SQL. I love building AI-powered applications and solving real-world problems with technology.</p>
+              <p><strong>Skills:</strong></p>
+              <div class="d-flex flex-wrap justify-content-start">
+                <span class="skill-icon" title="HTML">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png" alt="HTML" />
+                </span>
+                <span class="skill-icon" title="CSS">
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg alt="CSS" />
+                </span>
+                  <span class="skill-icon" title="Python">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/640px-Python.svg.png" alt="Python" />
+                  </span>
+                  <span class="skill-icon" title="Java">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java" />
+                </span>
+                  <span class="skill-icon" title="C">
+                      <img src="https://www.shutterstock.com/image-vector/c-language-logo-simple-colours-600nw-2113921046.jpg" alt="C" />
+                  </span>
+                  <span class="skill-icon" title="SQL">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSGcnD9w4iAUeuaR7Gt-0XDyWK7PwuRrbWWQ&s" alt="SQL" />
+                  </span>
+                  <span class="skill-icon" title="Kotlin">
+                    <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/kotlin-2-logo.png" alt="Kotlin" />
+                </span>
+                  <span class="skill-icon" title="Flask">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmD38KsMgEwahtWc_Nfs5ZVktP9dBc36MUZA&s" alt="Flask" />
+                </span>
+                  <span class="skill-icon" title="Machine Learning">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*cG6U1qstYDijh9bPL42e-Q.jpeg" alt="Machine Learning" />
+                </span>
+                  <span class="skill-icon" title="AI">
+                      <img src="https://eurocham.org.sg/wp-content/uploads/2024/02/Artificial-Intelligence-Logo-1-1-e1707095697550.png" alt="AI" />
+                  </span>
+                  <span class="skill-icon" title="Computer Vision">
+                      <img src="https://www.shutterstock.com/image-vector/modern-technology-icon-computer-vision-600nw-2270423625.jpg" alt="Computer Vision" />
+                  </span>
+                  
+                  <span class="skill-icon" title="AWS">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png" alt="AWS" />
+                  </span>
+                  
+                  <span class="skill-icon" title="Git">
+                    <img src="https://e7.pngegg.com/pngimages/713/558/png-clipart-computer-icons-pro-git-github-logo-text-logo-thumbnail.png" alt="Git" />
+                </span>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+<!-- Work Section -->
+<section id="work" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Work Experience</h2>
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <h3>AI Voice Assistant</h3>
+                <p><i class="bi bi-code-square"></i> Developed a multilingual AI voice assistant with real-time language detection, understanding user intent and providing accurate responses. Integrated NLP, deep learning models, and speech-to-text technology. Built using Python, Flask, and pre-trained models like BERT and GPT-3.</p>
+                <!-- GitHub Button for AI Voice Assistant -->
+                <a href="https://github.com/your-username/ai-voice-assistant" class="btn btn-ellipse" target="_blank">
+                    <i class="bi bi-github"></i> View on GitHub
+                </a>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <h3>Sentiment Analysis</h3>
+                <p><i class="bi bi-bar-chart"></i> Created a high-accuracy sentiment analysis model using BERT and a custom dataset. The model analyzes text data for positive, negative, or neutral sentiments. Integrated into a web app with real-time feedback and API for external applications.</p>
+                <!-- GitHub Button for Sentiment Analysis -->
+                <a href="https://github.com/your-username/sentiment-analysis" class="btn btn-ellipse" target="_blank">
+                    <i class="bi bi-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 contact-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="d-flex flex-wrap justify-content-around align-items-center">
+                    <div class="contact-item text-center mx-3">
+                        <a href="mailto:agnikbishi28@gmail.com" target="_blank">
+                            <img src="https://seeklogo.com/images/G/gmail-new-2020-logo-32DBE11BB4-seeklogo.com.png" alt="Email Logo" style="width: 60px;">
+                            <p>Email</p>
+                        </a>
+                    </div>
+                    <div class="contact-item text-center mx-3">
+                        <a href="https://www.linkedin.com/in/agnik-bishi-38357a240/" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" style="width: 60px;">
+                            <p>LinkedIn</p>
+                        </a>
+                    </div>
+                    <div class="contact-item text-center mx-3">
+                        <a href="https://github.com/JISHUBISHI" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" style="width: 60px;">
+                            <p>GitHub</p>
+                        </a>
+                    </div>
+                    <div class="contact-item text-center mx-3">
+                        <a href="https://www.instagram.com/lm3ilich/profilecard/?igsh=MTJqeDJsbWc3bTFzMw==" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram Logo" style="width: 60px;">
+                            <p>Instagram</p>
+                        </a>
+                    </div>
+                    <div class="contact-item text-center mx-3">
+                        <a href="https://www.facebook.com/share/7otSdHTREi6iGvir/" target="_blank">
+                            <img src="https://cdn.pixabay.com/photo/2021/06/15/12/51/facebook-6338507_1280.png" alt="Facebook Logo" style="width: 60px;">
+                            <p>Facebook</p>
+                        </a>
+                    </div>
+                    <div class="contact-item text-center mx-3">
+                        <a href="https://x.com/AgnikBishi" target="_blank">
+                            <img src=https://img.freepik.com/premium-vector/twitter-new-logo-twitter-icons-new-twitter-logo-x-2023_929078-218.jpg?semt=ais_hybrid" alt="x Logo" style="width: 60px;">
+                            <p>X</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </section>
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Agnik's Portfolio</p>
+    <p>
+        <a href="#privacy" class="text-white"><i class="bi bi-shield-lock"></i> Privacy Policy</a> | 
+        <a href="#terms" class="text-white"><i class="bi bi-file-earmark-text"></i> Terms of Use</a>
+    </p>
+    <p>Follow me: 
+        <a href="https://github.com/JISHUBISHI" class="text-white mx-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" style="width: 25px; height: 25px;">
+        </a>
+        <a href="https://www.linkedin.com/in/agnik-bishi-38357a240?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-white mx-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" style="width: 25px; height: 25px;">
+        </a>
+        <a href="https://www.instagram.com/lm3ilich/profilecard/?igsh=MTJqeDJsbWc3bTFzMw==" class="text-white mx-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram Logo" style="width: 25px; height: 25px;">
+        </a>
+        <a href="https://www.facebook.com/share/7otSdHTREi6iGvir/" class="text-white mx-3">
+            <img src="https://cdn.pixabay.com/photo/2021/06/15/12/51/facebook-6338507_1280.png" alt="Facebook Logo" style="width: 25px; height: 25px;">
+        </a>
+        <a href="mailto:agnikbishi28@gmail.com" class="text-white mx-3">
+            <img src="https://seeklogo.com/images/G/gmail-new-2020-logo-32DBE11BB4-seeklogo.com.png" alt="Gmail Logo" style="width: 25px; height: 25px;">
+        </a>
+        <a href="https://x.com/AgnikBishi" class="text-white mx-3">
+            <img src="https://img.freepik.com/premium-vector/twitter-new-logo-twitter-icons-new-twitter-logo-x-2023_929078-218.jpg?semt=ais_hybrid" alt="X Logo" style="width: 25px; height: 25px;">
+        </a>
+    </p>
+</footer>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding-top: 56px;
+}
+
+/* Navigation Bar */
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    color: #87866f;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #72847a;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #fdfdfd;
+    padding: 4rem 0;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 2s ease-out forwards, colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+        100% { color: #080028; }
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+#hero a.btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Makes the button round */
+}
+
+/* About Me Section */
+#about {
+    background-color: #fff;
+    padding: 4rem 0;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+#about .about-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-out forwards;
+    animation-delay: 0.5s; /* Delay for the paragraph */
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Center profile photo */
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Work Experience Section */
+#work {
+    background-color: #f1f1f1;
+    padding: 4rem 0;
+}
+
+#work h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+.portfolio-item:nth-child(1) {
+    animation-delay: 0.3s; /* Delay for first item */
+}
+
+.portfolio-item:nth-child(2) {
+    animation-delay: 0.6s; /* Delay for second item */
+}
+
+#work h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#work p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #fff;
+    padding: 4rem 0;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #007bff;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Icons */
+i.bi {
+    margin-right: 0.5rem;
+}
+
+/* Animation for fading in */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+
+    #about h2, #work h2, #contact h2 {
+        font-size: 2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+}
+
+/* Hover Effect for Icons */
+.contact-section i {
+    transition: transform 0.3s ease;
+}
+
+.contact-section i:hover {
+    transform: scale(1.2);
+}
+
+.skill-icon {
+    display: inline-block;
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-icon img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.skill-icon:hover {
+    transform: scale(1.1); /* Scale on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Custom elliptical button */
+.btn-ellipse {
+    border: 2px solid #000; /* Black border */
+    border-radius: 50px;    /* Elliptical shape */
+    background-color: transparent; /* Transparent background */
+    color: #000;           /* Black text color */
+    padding: 10px 30px;    /* Padding for size */
+    text-transform: uppercase; /* Uppercase text */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    display: inline-block;
+}
+
+/* Hover effect for button */
+.btn-ellipse:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Slight background on hover */
+    color: #000; /* Keep the text color black */
+}
