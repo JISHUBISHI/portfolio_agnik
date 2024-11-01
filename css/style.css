@@ -258,3 +258,38 @@ i.bi {
     background-color: rgba(0, 0, 0, 0.1); /* Slight background on hover */
     color: #000; /* Keep the text color black */
 }
+
+    .btn-custom {
+        background: linear-gradient(45deg, #6a11cb, #2575fc); /* Attractive gradient */
+        border-radius: 50px; /* Round shape */
+        color: white;
+        padding: 10px 20px; /* Padding to make the button stand out */
+        font-size: 16px; /* Larger text for visibility */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        text-decoration: none; /* Remove underline */
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-custom:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+        text-decoration: none;
+        color: white; /* Keep the text white on hover */
+    }
+
+
+
+
+
+
+    .rounded-link {
+        border-radius: 50px; /* Makes the shape round */
+        padding: 10px 20px; /* Adjust the padding for a pill-like appearance */
+        border: 1px solid #ccc; /* Optional: add a border */
+        background-color: #f8f9fa; /* Optional: change background color */
+        transition: background-color 0.3s ease; /* Optional: smooth transition */
+    }
+
+    .rounded-link:hover {
+        background-color: #e2e6ea; /* Optional: change color on hover */
+    }
