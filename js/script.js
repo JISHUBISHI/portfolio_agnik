@@ -26,3 +26,29 @@ $('#back-to-top').click(function() {
     $('html, body').animate({scrollTop : 0},800);
     return false;
 });
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+// Check for saved theme in localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.body.classList.add(savedTheme);
+    themeIcon.classList.toggle('bi-brightness-high', savedTheme === 'light-mode');
+    themeIcon.classList.toggle('bi-moon', savedTheme === 'dark-mode');
+}
+
+// Function to toggle dark mode
+function toggleTheme() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode', !isDarkMode);
+    const theme = isDarkMode ? 'dark-mode' : 'light-mode';
+    localStorage.setItem('theme', theme);
+
+    // Switch between sun and moon icons
+    themeIcon.classList.toggle('bi-brightness-high', !isDarkMode);
+    themeIcon.classList.toggle('bi-moon', isDarkMode);
+}
+
+// Event listener for the toggle button
+themeToggle.addEventListener('click', toggleTheme);
