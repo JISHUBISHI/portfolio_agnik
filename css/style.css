@@ -304,3 +304,171 @@ i.bi {
     .rounded-link:hover {
         background-color: #e2e6ea; /* Optional: change color on hover */
     }
+    .btn-ellipse {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #333;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-ellipse i {
+        margin-right: 8px;
+    }
+
+    .btn-ellipse:hover {
+        background-color: #555;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-ellipse:active {
+        transform: scale(0.95);
+    }
+
+    .project-item {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .py-5 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .bg-light {
+        background-color: #f8f9fa !important;
+    }
+    body {
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    /* Light mode styles */
+    body.light-mode {
+        background-color: white; /* Light background */
+        color: black; /* Dark text */
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: #343a40; /* Dark background */
+        color: white; /* Light text */
+    }
+
+    body.dark-mode .navbar {
+        background-color: #495057; /* Dark navbar background */
+    }
+
+    .mode-toggle {
+        border: none;
+        background: none;
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .mode-toggle:hover {
+        color: #ffc107; /* Highlight color on hover */
+    }
+    .btn-custom {
+        background: linear-gradient(45deg, #6a11cb, #2575fc); /* Attractive gradient */
+        border-radius: 50px; /* Round shape */
+        color: white;
+        padding: 10px 20px; /* Padding to make the button stand out */
+        font-size: 16px; /* Larger text for visibility */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        text-decoration: none; /* Remove underline */
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-custom:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+        text-decoration: none;
+        color: white; /* Keep the text white on hover */
+    }
+    .rounded-link {
+        border-radius: 50px; /* Makes the shape round */
+        padding: 10px 20px; /* Adjust the padding for a pill-like appearance */
+        border: 1px solid #ccc; /* Optional: add a border */
+        background-color: #f8f9fa; /* Optional: change background color */
+        transition: background-color 0.3s ease; /* Optional: smooth transition */
+    }
+
+    .rounded-link:hover {
+        background-color: #e2e6ea; /* Optional: change color on hover */
+    }
+    /* Styling for the Hero Section */
+    #hero {
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0;
+        color: navy;
+        background-color: #f8f9fa;
+    }
+
+    /* Fullscreen Canvas */
+    #robotic-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    /* Letter-by-letter text animation */
+    .animate-text {
+        font-weight: bold;
+        font-size: 3rem;
+        color: navy;
+    }
+
+    /* Transparent Button Styling */
+    .btn-transparent {
+        background-color: transparent;
+        border: 2px solid navy;
+        color: rgb(30, 30, 170);
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .btn-transparent:hover {
+        background-color: navy;
+        color: white;
+    }
+    .btn-ellipse {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #333;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-ellipse i {
+        margin-right: 8px;
+    }
+
+    .btn-ellipse:hover {
+        background-color: #555;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-ellipse:active {
+        transform: scale(0.95);
+    }

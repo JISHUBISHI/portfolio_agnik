@@ -46,37 +46,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css">
 
     <style>
-        body {
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-
-        /* Light mode styles */
-        body.light-mode {
-            background-color: white; /* Light background */
-            color: black; /* Dark text */
-        }
-
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #343a40; /* Dark background */
-            color: white; /* Light text */
-        }
-
-        body.dark-mode .navbar {
-            background-color: #495057; /* Dark navbar background */
-        }
-
-        .mode-toggle {
-            border: none;
-            background: none;
-            font-size: 24px;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .mode-toggle:hover {
-            color: #ffc107; /* Highlight color on hover */
-        }
+       
     </style>
 </head>
 <body class="light-mode">
@@ -158,23 +128,7 @@
 
 <!-- Custom CSS for the button -->
 <style>
-    .btn-custom {
-        background: linear-gradient(45deg, #6a11cb, #2575fc); /* Attractive gradient */
-        border-radius: 50px; /* Round shape */
-        color: white;
-        padding: 10px 20px; /* Padding to make the button stand out */
-        font-size: 16px; /* Larger text for visibility */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        text-decoration: none; /* Remove underline */
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn-custom:hover {
-        transform: scale(1.05); /* Slight zoom on hover */
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
-        text-decoration: none;
-        color: white; /* Keep the text white on hover */
-    }
+    
 </style>
 
 
@@ -182,22 +136,13 @@
 
 <!-- CSS -->
 <style>
-    .rounded-link {
-        border-radius: 50px; /* Makes the shape round */
-        padding: 10px 20px; /* Adjust the padding for a pill-like appearance */
-        border: 1px solid #ccc; /* Optional: add a border */
-        background-color: #f8f9fa; /* Optional: change background color */
-        transition: background-color 0.3s ease; /* Optional: smooth transition */
-    }
-
-    .rounded-link:hover {
-        background-color: #e2e6ea; /* Optional: change color on hover */
-    }
+    
 </style>
 
 
-<!-- Hero Section -->
+<!-- Hero Section with Live Robotic Animation Background -->
 <section id="hero" class="jumbotron text-center">
+    <canvas id="robotic-bg"></canvas> <!-- Canvas for Live Animation Background -->
     <div class="container">
         <h1 class="display-4 animate-text">
             <!-- Wrapping each letter in a span for animation -->
@@ -206,71 +151,111 @@
             <span>I</span><span>'</span><span>m</span> 
             <span>A</span><span>g</span><span>n</span><span>i</span><span>k</span>
         </h1>
-        <p class="lead"><strong>I am a passionate Software Engineer currently pursuing a B.Tech degree from the Institute of Engineering and Management, Kolkata. My expertise spans across Python, Flask, AI, Generative AI, Kotlin, SQL, and more. With a solid foundation in software development and a keen interest in AI technologies, I focus on building innovative solutions that bridge the gap between cutting-edge tech and practical applications. I completed my higher secondary education at Khukuradaha ICMM High School, and I am constantly seeking opportunities to expand my knowledge and skills in the ever-evolving tech landscape.If you want to see my projects then click the below botton.</strong></p>
+        <p class="lead"><strong>I am a passionate Software Engineer currently pursuing a B.Tech degree from the Institute of Engineering and Management, Kolkata. My expertise spans across Python, Flask, AI, Generative AI, Kotlin, SQL, and more. With a solid foundation in software development and a keen interest in AI technologies, I focus on building innovative solutions that bridge the gap between cutting-edge tech and practical applications. I completed my higher secondary education at Khukuradaha ICMM High School, and I am constantly seeking opportunities to expand my knowledge and skills in the ever-evolving tech landscape. If you want to see my projects, click the button below.</strong></p>
         <a href="#work" class="btn btn-transparent btn-ellipse"><i class="bi bi-arrow-down-circle"></i> View My Work</a>
     </div>
 </section>
 
 <style>
-    /* Styling for the Hero Section */
-    #hero {
-        background-color: #f8f9fa;
-        padding: 100px 0;
-    }
-    .animate-text {
-        color: navy; /* Text color set to navy blue */
-        font-weight: bold;
-        font-size: 3rem;
-        overflow: hidden;
-        display: inline-block;
-        white-space: nowrap;
-    }
-    /* Letter-by-letter animation */
-    .animate-text span {
-        display: inline-block;
-        opacity: 0;
-        transform: translateY(-20px);
-        animation: fadeInUp 0.5s ease forwards;
-    }
-    /* Keyframes for the animation */
-    @keyframes fadeInUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
+    
+</style>
+
+<script>
+    const canvas = document.getElementById('robotic-bg');
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas to fill the screen
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Adjust canvas size on window resize
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
+    const particlesArray = [];
+
+    // Create Particle class for the animation
+    class Particle {
+        constructor(x, y, dx, dy, size) {
+            this.x = x;
+            this.y = y;
+            this.dx = dx;
+            this.dy = dy;
+            this.size = size;
+            this.color = 'rgba(30, 30, 170, 0.7)'; // Robotic blue color
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+
+        update() {
+            if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                this.dx = -this.dx;
+            }
+            if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                this.dy = -this.dy;
+            }
+
+            this.x += this.dx;
+            this.y += this.dy;
+
+            this.draw();
         }
     }
-    /* Delay for each letter */
-    .animate-text span:nth-child(1) { animation-delay: 0s; }
-    .animate-text span:nth-child(2) { animation-delay: 0.1s; }
-    .animate-text span:nth-child(3) { animation-delay: 0.2s; }
-    .animate-text span:nth-child(4) { animation-delay: 0.3s; }
-    .animate-text span:nth-child(5) { animation-delay: 0.4s; }
-    .animate-text span:nth-child(6) { animation-delay: 0.5s; }
-    .animate-text span:nth-child(7) { animation-delay: 0.6s; }
-    .animate-text span:nth-child(8) { animation-delay: 0.7s; }
-    .animate-text span:nth-child(9) { animation-delay: 0.8s; }
-    .animate-text span:nth-child(10) { animation-delay: 0.9s; }
-    .animate-text span:nth-child(11) { animation-delay: 1s; }
-    .animate-text span:nth-child(12) { animation-delay: 1.1s; }
-    .animate-text span:nth-child(13) { animation-delay: 1.2s; }
-    .animate-text span:nth-child(14) { animation-delay: 1.3s; }
-    .animate-text span:nth-child(15) { animation-delay: 1.4s; }
-    .animate-text span:nth-child(16) { animation-delay: 1.5s; }
 
-    /* Styles for the transparent button */
-    .btn-transparent {
-        background-color: transparent; /* Make button background transparent */
-        border: 2px solid navy; /* Navy border */
-        color: rgb(30, 30, 170); /* Text color */
-        padding: 10px 20px; /* Padding */
-        border-radius: 50px; /* Rounded corners for elliptical shape */
-        transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+    // Initialize particles
+    function init() {
+        particlesArray.length = 0;
+        for (let i = 0; i < 100; i++) {
+            const size = Math.random() * 3 + 1;
+            const x = Math.random() * (canvas.width - size * 2) + size;
+            const y = Math.random() * (canvas.height - size * 2) + size;
+            const dx = (Math.random() - 0.5) * 2;
+            const dy = (Math.random() - 0.5) * 2;
+            particlesArray.push(new Particle(x, y, dx, dy, size));
+        }
     }
-    .btn-transparent:hover {
-        background-color: navy; /* Background color on hover */
-        color: white; /* Text color on hover */
+
+    // Animate particles
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(particle => particle.update());
+        connectParticles(); // Draw connecting lines
+        requestAnimationFrame(animate);
     }
-</style>
+
+    // Draw lines between particles to simulate circuits
+    function connectParticles() {
+        let opacity = 1;
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                const dx = particlesArray[a].x - particlesArray[b].x;
+                const dy = particlesArray[a].y - particlesArray[b].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    opacity = 1 - distance / 100;
+                    ctx.strokeStyle = `rgba(30, 30, 170, ${opacity})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    init();
+    animate();
+</script>
+
 
 
 
@@ -281,7 +266,7 @@
       <h2 class="text-center mb-4">About Me</h2>
       <div class="row justify-content-center">
           <div class="col-md-6 text-center">
-              <img src="/css/image/aginkpic.jpg" alt="Agnik's Profile Photo" class="profile-photo">
+              <img src="/css/image/Agnik_profile.jpg" alt="Agnik's Profile Photo" class="profile-photo">
           </div>
           <div class="col-md-6">
               <p class="about-text">I’m Agnik, a passionate software engineer skilled in C, Java, Python, and Kotlin, with a focus on Android development. I excel in frontend technologies like HTML, CSS, and JavaScript, crafting user-friendly interfaces. My interests include machine learning, deep learning, and generative AI, where I explore innovative solutions. I also work with Flask for backend development and AWS for cloud computing, ensuring scalability and efficiency in my projects. Proficient in Git and GitHub
@@ -358,36 +343,18 @@
                     <i class="bi bi-github"></i> View on GitHub
                 </a>
             </div>
-    </div>
+        </div>
+
+        <!-- Projects Button -->
+        <div class="text-center mt-5">
+            <a href="projects.html" class="btn btn-ellipse">Show My Projects</a>
+        </div>
     </div>
 </section>
-<!-- CSS for the GitHub button -->
+
+<!-- CSS for the GitHub Button and Projects Button -->
 <style>
-    .btn-ellipse {
-        display: inline-flex;
-        align-items: center;
-        padding: 10px 20px;
-        border-radius: 50px;
-        background-color: #333;
-        color: #fff;
-        font-weight: bold;
-        text-decoration: none;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .btn-ellipse i {
-        margin-right: 8px;
-    }
-
-    .btn-ellipse:hover {
-        background-color: #555;
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-ellipse:active {
-        transform: scale(0.95);
-    }
+   
 </style>
 
 
