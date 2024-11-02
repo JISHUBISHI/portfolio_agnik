@@ -293,3 +293,14 @@ i.bi {
     .rounded-link:hover {
         background-color: #e2e6ea; /* Optional: change color on hover */
     }
+    .rounded-link {
+        border-radius: 50px; /* Makes the shape round */
+        padding: 10px 20px; /* Adjust the padding for a pill-like appearance */
+        border: 1px solid #ccc; /* Optional: add a border */
+        background-color: #f8f9fa; /* Optional: change background color */
+        transition: background-color 0.3s ease; /* Optional: smooth transition */
+    }
+
+    .rounded-link:hover {
+        background-color: #e2e6ea; /* Optional: change color on hover */
+    }
