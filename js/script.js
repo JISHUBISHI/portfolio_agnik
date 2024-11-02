@@ -27,6 +27,9 @@ $('#back-to-top').click(function() {
     return false;
 });
 
+
+
+// Get the theme toggle button and the icon inside it
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
